@@ -1,6 +1,8 @@
 package com.codeclan.filemanager.filemanager.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +21,10 @@ public class Folder {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private User user; // user.java links to here at 'user'
 
-    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToMany(mappedBy = "folder") //mapped to a property in the folders file, called folder
     private List<File> files;
 
 

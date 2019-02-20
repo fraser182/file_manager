@@ -21,7 +21,6 @@ public class File {
     private Double size;
 
     @ManyToOne
-
     @JoinColumn(name = "folder_id", nullable = false)
     private Folder folder;
 

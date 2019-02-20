@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class FilemanagerApplicationTests {
 
-	@Autowired
+	@Autowired // used on Inter
 	FolderRepository folderRepository;
 
 	@Autowired
@@ -30,13 +30,13 @@ public class FilemanagerApplicationTests {
 	}
 
 	@Test
-	public void createUser(){
+	public void canSetupUser(){
 		User user1 = new User("Lindsay");
 		userRepository.save(user1);
 	}
 
 	@Test
-	public void createAUserWithAFolder(){
+	public void canSetupAFolder(){
 		User user1 = new User("Belle");
 		userRepository.save(user1);
 
@@ -45,7 +45,7 @@ public class FilemanagerApplicationTests {
 	}
 
 	@Test
-	public void addAFileToFolder(){
+	public void canSetupAFile(){
 		User user1 = new User("Jean");
 		userRepository.save(user1);
 

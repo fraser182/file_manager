@@ -18,8 +18,8 @@ public class User {
     @Column
     private String name;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore // when I get the user, dont bring me the list of folders, otherwise I will get recursion.
+    @OneToMany(mappedBy = "user")
     private List<Folder> folders;
 
 

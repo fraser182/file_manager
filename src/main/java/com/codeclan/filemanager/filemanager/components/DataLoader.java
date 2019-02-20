@@ -12,6 +12,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+// to run at the same time as the application, mark as a Component then implement ApplicationRunner
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -56,5 +57,7 @@ public class DataLoader implements ApplicationRunner {
         File file3 = new File("Biscuits", ".xls", 12.0, folder2);
         fileRepository.save(file3);
 
+        File file4 = new File("Jeses", ".xls", 2.0, folder3);
+        fileRepository.save(file4);
     }
 }
